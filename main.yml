@@ -4,7 +4,7 @@
   roles:
     - enable_repos
 
- - hosts: frontends
+- hosts: frontends
   gather_facts: no
   roles:
     - install_haproxy
