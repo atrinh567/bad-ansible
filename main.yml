@@ -1,27 +1,32 @@
 ---
 - hosts: all
   gather_facts: no
+  become: true
   roles:
     - enable_repos
 
 - hosts: frontends
   gather_facts: no
+  become: true
   roles:
     - install_haproxy
 
 - hosts: apps
   gather_facts: no
+  become: true
   roles:
     - install_tomcat
     - deploy_app
 
 - hosts: appdbs
   gather_facts: no
+  become: true
   roles:
     - install_postgres
    
 - hosts: apps
   gather_facts: no
+  become: true
   roles:
     - install_apache
 ...
